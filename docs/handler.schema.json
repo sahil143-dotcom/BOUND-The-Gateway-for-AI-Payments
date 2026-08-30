@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "com.razorpay.payments business config",
+  "type": "object",
+  "required": ["environment", "currency", "merchant_id"],
+  "properties": {
+    "environment": { "enum": ["test"] },
+    "currency": { "enum": ["INR"] },
+    "merchant_id": { "type": "string" },
+    "rail": { "enum": ["mock", "razorpay"] }
+  },
+  "additionalProperties": false
+}

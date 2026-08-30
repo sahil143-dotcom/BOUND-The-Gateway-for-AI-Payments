@@ -1,0 +1,15 @@
+.env
+*.db
+.venv/
+bound.egg-info/
+__pycache__/
+.pytest_cache/
+.mypy_cache/
+.signing_key
+*.pyc
+.coverage
+htmlcov/
+web/node_modules/
+web/.next/
+web/out/
+web/tsconfig.tsbuildinfo

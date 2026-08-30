@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>BOUND</title>
+  <link rel="stylesheet" href="/static/product.css"/>
+</head>
+<body>
+  <header class="top">
+    <div>
+      <p class="brand">BOUND</p>
+      <h1>AI requests → BOUND authorizes → Razorpay settles</h1>
+    </div>
+    <div class="rail-badge" id="rail-label">{{ rail_label }}</div>
+  </header>
+
+  <main class="board">
+    <section class="col" id="buyer-col">
+      <h2>AI buyer</h2>
+      <p class="hint">A software agent is the buyer. The human only states a constraint.</p>
+      <div class="bubble user">
+        <span>User</span>
+        <p id="user-ask">Buy me a red cotton shirt under ₹1,800.</p>
+      </div>
+      <div class="bubble agent">
+        <span>AI buyer</span>
+        <p id="agent-narration">Ready to search Ananya Atelier and request a red cotton shirt within the ₹1,800 ceiling.</p>
+      </div>
+      <dl class="facts" id="buyer-facts">
+        <div><dt>Product</dt><dd id="f-product">Red cotton shirt</dd></div>
+        <div><dt>Merchant</dt><dd id="f-merchant">{{ merchant.name }}</dd></div>
+        <div><dt>Price</dt><dd id="f-price">₹1,499</dd></div>
+        <div><dt>Quantity</dt><dd id="f-qty">1</dd></div>
+        <div><dt>AI intent</dt><dd id="f-intent">red cotton shirt, under ₹1,800</dd></div>
+        <div><dt>Max authorized</dt><dd id="f-max">₹1,800</dd></div>
+        <div><dt>Category</dt><dd id="f-cat">apparel</dd></div>
+      </dl>
+      <div class="actions">
+        <button type="button" id="btn-buy">Send purchase request</button>
+        <button type="button" class="ghost" id="btn-expire">Send after quote expires</button>
+      </div>
+    </section>
+
+    <section class="col hero" id="auth-col">
+      <h2>BOUND authorization</h2>
+      <p class="hint">Six deterministic gates. The payment rail is called only after APPROVE.</p>
+      <div class="auth-card" id="auth-card">
+        <p class="empty" id="auth-empty">Waiting for the AI buyer to request payment.</p>
+        <div id="auth-body" hidden>
+          <div class="auth-meta">
+            <div><span>Transaction amount</span><strong id="a-amount">—</strong></div>
+            <div><span>Product</span><strong id="a-product">—</strong></div>
+            <div><span>Merchant</span><strong id="a-merchant">—</strong></div>
+            <div><span>Trace ID</span><strong id="a-trace">—</strong></div>
+          </div>
+          <p class="gate-title">Policy gates</p>
+          <ul class="gates" id="gates"></ul>
+          <div class="verdict" id="verdict"></div>
+          <div class="settle" id="settle"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="col" id="audit-col">
+      <h2>Audit timeline</h2>
+      <p class="hint">Replay proves the decision and whether Razorpay was called.</p>
+      <form id="replay-form">
+        <input name="trace_id" id="trace-input" value="{{ initial_trace }}" placeholder="Paste trace_id" autocomplete="off"/>
+        <button type="submit">Replay</button>
+      </form>
+      <ol class="timeline" id="timeline">
+        <li class="muted">No trace selected.</li>
+      </ol>
+    </section>
+  </main>
+
+  <section class="metrics" id="metrics" aria-label="Secondary volume">
+    <div><span>Agent requests</span><b id="m-requests">0</b></div>
+    <div><span>Approved</span><b class="ok" id="m-approved">0</b></div>
+    <div><span>Blocked</span><b class="bad" id="m-blocked">0</b></div>
+    <div><span>Agent GMV captured</span><b class="ok" id="m-captured">₹0</b></div>
+    <div><span>Agent GMV prevented</span><b class="bad" id="m-prevented">₹0</b></div>
+  </section>
+  <p class="reasons" id="deny-reasons"></p>
+
+  <script src="/static/product.js"></script>
+</body>
+</html>

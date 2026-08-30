@@ -1,0 +1,33 @@
+{
+  "merchant": {
+    "id": "acct_seed",
+    "name": "Ananya Atelier",
+    "currency": "INR",
+    "max_txn_paise": 200000,
+    "daily_cap_paise": 5000000,
+    "allowed_categories": ["apparel"]
+  },
+  "skus": [
+    {"id": "sku_kurta_indigo", "name": "Indigo handloom kurta", "category": "apparel", "price_paise": 169900},
+    {"id": "sku_kurta_sand", "name": "Sand linen kurta", "category": "apparel", "price_paise": 149900},
+    {"id": "sku_saree_madurai", "name": "Madurai cotton saree", "category": "apparel", "price_paise": 189900},
+    {"id": "sku_dupatta_neel", "name": "Neel silk dupatta", "category": "apparel", "price_paise": 79900},
+    {"id": "sku_stole_block", "name": "Block-print stole", "category": "apparel", "price_paise": 49900},
+    {"id": "sku_shirt_red_cotton", "name": "Red cotton shirt", "category": "apparel", "price_paise": 149900},
+    {"id": "sku_shirt_khadi", "name": "Khadi overshirt", "category": "apparel", "price_paise": 129900},
+    {"id": "sku_trouser_olive", "name": "Olive wide trousers", "category": "apparel", "price_paise": 139900},
+    {"id": "sku_jacket_quilt", "name": "Quilted evening jacket", "category": "apparel", "price_paise": 199900},
+    {"id": "sku_dress_midnight", "name": "Midnight wrap dress", "category": "apparel", "price_paise": 179900},
+    {"id": "sku_skirt_kalam", "name": "Kalamkari wrap skirt", "category": "apparel", "price_paise": 119900},
+    {"id": "sku_tee_lotus", "name": "Lotus ink tee", "category": "apparel", "price_paise": 29900},
+    {"id": "sku_tee_neem", "name": "Neem grove tee", "category": "apparel", "price_paise": 32900},
+    {"id": "sku_hoodie_char", "name": "Charcoal studio hoodie", "category": "apparel", "price_paise": 189900},
+    {"id": "sku_shorts_coast", "name": "Coastal linen shorts", "category": "apparel", "price_paise": 69900},
+    {"id": "sku_vest_mirror", "name": "Mirror-work vest", "category": "apparel", "price_paise": 159900},
+    {"id": "sku_palazzo_ivory", "name": "Ivory palazzo", "category": "apparel", "price_paise": 109900},
+    {"id": "sku_blouse_zari", "name": "Zari-edge blouse", "category": "apparel", "price_paise": 89900},
+    {"id": "sku_scarf_madder", "name": "Madder wool scarf", "category": "apparel", "price_paise": 54900},
+    {"id": "sku_coat_rain", "name": "Rain-cut trench", "category": "apparel", "price_paise": 199900},
+    {"id": "sku_bandi_navy", "name": "Navy bandi", "category": "apparel", "price_paise": 174900}
+  ]
+}
