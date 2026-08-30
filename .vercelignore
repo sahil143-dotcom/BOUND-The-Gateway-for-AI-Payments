@@ -1,9 +1,7 @@
-bound
 tests
 scripts
 console
 Procfile
-pyproject.toml
 *.db
 .venv
 .pytest_cache
