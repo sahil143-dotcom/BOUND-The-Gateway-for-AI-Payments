@@ -1,6 +1,6 @@
 import type { CatalogResponse, Checkout, Complete, LedgerEvent, Metrics, ShopResponse } from "./types";
 
-const BASE = "/bound-api";
+const BASE = (process.env.NEXT_PUBLIC_BOUND_API_URL || "/bound-api").replace(/\/$/, "");
 
 function friendlyError(status: number): string {
   if (status === 404) return "Nothing matched that request.";

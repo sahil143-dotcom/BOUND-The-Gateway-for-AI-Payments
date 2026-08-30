@@ -1,4 +1,6 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "framework": "fastapi"
+  "framework": "nextjs",
+  "installCommand": "npm install && npm install --prefix web",
+  "buildCommand": "npm run build --prefix web"
 }
