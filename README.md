@@ -41,6 +41,22 @@ python scripts/drift_then_buy.py
 pytest
 ```
 
+## Deploy the Next.js UI on Vercel
+
+The payment API is FastAPI (`bound/`). Vercel should host only the UI in `web/`.
+
+1. Import the GitHub repo in Vercel.
+2. Set **Root Directory** to `web` (not `.`).
+3. In **Build & Development Settings**:
+   - Framework: Next.js
+   - Install Command: `npm install` (or turn Override **off**)
+   - Build Command: `npm run build` (or turn Override **off**)
+   - Output Directory: leave empty (Override **off**)
+4. Do **not** keep an install command that contains `--prefix web`. With Root Directory `web`, that resolves to `web/web/package.json` and fails.
+5. Optional env for a live API later: `NEXT_PUBLIC_BOUND_API_URL=https://your-api-host.example` (no trailing slash), then redeploy.
+
+Until that env is set, the landing page can load, but catalog / buy calls will fail.
+
 ## Tests that prove the rail boundary
 
 - Approved checkout calls the rail
