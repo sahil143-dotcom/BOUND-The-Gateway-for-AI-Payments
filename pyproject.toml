@@ -16,6 +16,7 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = ["pytest>=8.3.0"]
+agent = ["openai>=1.40.0"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
